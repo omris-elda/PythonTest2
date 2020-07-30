@@ -254,23 +254,23 @@ def eight(input,  a):
 	# There are no hints for this question.
 
 def nine(string1, string2):
-	list(string1).sort()
-	list(string2).sort()
+	string1 = sorted(string1)
+	string2 = sorted(string2)
+	if string1 == string2:
+		return True
 	test = ""
 	for char in string1:
 		if char in string2:
 			test += char
 			if test in string2:
 				return True
+	test = ""
 	for char in string2:
-		test = ""
 		if char in string1:
 			test += char
 			if test in string1:
 				return True
 	return False
-
-
 
 
 	# output1 = []
