@@ -200,11 +200,11 @@ def six(input):
 	# Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-	input = [int(a), int(b), int(c)]
-	input = input.sort(reverse = True)
-	a1 = input[0]
-	b2 = input[1]
-	c3 = input[2]
+	inputlist = [a, b, c]
+	inputlist.sort(reverse = True)
+	a1 = int(inputlist[0])
+	b2 = int(inputlist[1])
+	c3 = int(inputlist[2])
 	if (c3 - b2) == (b2 - a1):
 		return True
 	else:
@@ -226,8 +226,18 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(input,  a):
+	newlen = len(input) - a
+	newlen2 = newlen / 2
+	output = ""
+	n = 0
+	for i in input:
+		if n < newlen2:
+			output += i
+		elif n > (newlen2 + a - 1):
+			output += i
+		n += 1
 
-	return ""
+	return output
 
 	# <QUESTION 9>
 
@@ -244,17 +254,23 @@ def eight(input,  a):
 	# There are no hints for this question.
 
 def nine(string1, string2):
-	newstring1 = list(string1).sort()
-	newstring2 = list(string2).sort()
+	list(string1).sort()
+	list(string2).sort()
 	test = ""
-	for char in newstring1:
-		if char in newstring2:
+	for char in string1:
+		if char in string2:
 			test += char
+			if test in string2:
+				return True
+	for char in string2:
+		test = ""
+		if char in string1:
+			test += char
+			if test in string1:
+				return True
+	return False
 
-	if test in newstring2 or test in newstring1:
-		return True
-	else:
-		return False
+
 
 
 	# output1 = []
