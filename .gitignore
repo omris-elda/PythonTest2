@@ -1,0 +1,9 @@
+/pycache/
+*.pyc
+/venv/
+startupinstructions.txt
+requirements.txt
+/.vscode/
+/.pytest_cache/
+.coverage
+/htmlcov/
